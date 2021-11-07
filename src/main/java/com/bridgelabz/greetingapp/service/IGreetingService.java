@@ -9,5 +9,5 @@ public interface IGreetingService {
 
 	public Greeting greetings(String name); 
 	public Greeting greetingForUser(User user);
-
+	public void saveGreetingForUser(User user);
 }

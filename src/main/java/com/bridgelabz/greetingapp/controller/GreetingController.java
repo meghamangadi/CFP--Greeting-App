@@ -37,4 +37,10 @@ public class GreetingController {
 		return greetingService.greetingForUser(user); 
 	}
 
+	
+	@PostMapping("/post")
+	public void save(@RequestBody User user) {
+		 greetingService.saveGreetingForUser(user); 
+	}
+
 }
