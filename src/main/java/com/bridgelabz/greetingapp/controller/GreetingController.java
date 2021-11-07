@@ -22,7 +22,7 @@ public class GreetingController {
 	 private GreetingService greetingService;
 	 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public Greeting greeting(@RequestParam(value ="name", defaultValue ="World") String name) {
 	return	greetingService.greeting(name);
 		 
 	}
