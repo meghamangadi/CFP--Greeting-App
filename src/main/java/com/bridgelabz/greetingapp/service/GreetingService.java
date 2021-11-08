@@ -1,11 +1,10 @@
 package com.bridgelabz.greetingapp.service;
 
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.bridgelabz.greetingapp.entity.GreetingEntity;
 import com.bridgelabz.greetingapp.model.Greeting;
@@ -43,6 +42,14 @@ public class GreetingService implements IGreetingService  {
 		greeting.setGreetingMessage("Hello"+user.getFirstName());
 		greetingRepository.save(greeting);
 		
+	}
+
+	@Override
+	public   String getMessage(Long id) {
+		    Optional<GreetingEntity> value=greetingRepository.findById(id);		   
+			return  value.get().getGreetingMessage();
+		  
+		 
 	}
 
 }
